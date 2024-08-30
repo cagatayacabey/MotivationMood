@@ -1,21 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MainScreen from '@/screens/MainScreen';
+import AccountScreen from '@/screens/AccountScreen';
+import ThemesScreen from '@/screens/ThemesScreen';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Text>App</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="MainScreen" component={MainScreen} options={{ headerShown: false }} />
+
+        <Stack.Screen
+          name="AccountScreen"
+          component={AccountScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ThemesScreen"
+          component={ThemesScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightgray',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

@@ -15,11 +15,14 @@ import { adjustFont, responsiveSize } from '@/utils/design';
 export default function MainScreen({ navigation }) {
   const safeAreaInsets = useSafeAreaInsets();
 
-  const handleGoAccountScreen = () => {
-    navigation.navigate(Screens.AccountScreen);
+  const handleGoCategoryScreen = () => {
+    navigation.navigate(Screens.CategoryScreen);
   };
   const handleGoThemesScreen = () => {
     navigation.navigate(Screens.ThemesScreen);
+  };
+  const handleGoAccountScreen = () => {
+    navigation.navigate(Screens.AccountScreen);
   };
   return (
     <View style={styles.container}>
@@ -55,7 +58,7 @@ export default function MainScreen({ navigation }) {
 
         <View style={[styles.bottomContainer, { paddingBottom: safeAreaInsets.bottom }]}>
           <View style={styles.bottomLeftContainer}>
-            <Pressable onPress={handleGoAccountScreen} style={styles.categoryIcon}>
+            <Pressable onPress={handleGoCategoryScreen} style={styles.categoryIcon}>
               <IconMetarial name="category" size={25} color={Colors.white} />
               <Text style={styles.categoryText}>Categories</Text>
             </Pressable>

@@ -4,6 +4,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainScreen from '@/screens/MainScreen';
 import AccountScreen from '@/screens/AccountScreen';
 import ThemesScreen from '@/screens/ThemesScreen';
+import CategoryScreen from '@/screens/CategoryScreen';
+import FavoritesScreen from '@/screens/FavoritesScreen';
+import SettingsScreen from '@/screens/SettingsScreen';
+import NotificationsScreen from '@/screens/NotificationsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +25,26 @@ function App() {
         <Stack.Screen
           name="ThemesScreen"
           component={ThemesScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CategoryScreen"
+          component={CategoryScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="FavoritesScreen"
+          component={FavoritesScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="NotificationsScreen"
+          component={NotificationsScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SettingsScreen"
+          component={SettingsScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
